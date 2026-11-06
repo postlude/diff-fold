@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DiffFold</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand-mark" aria-hidden="true">⌄</div>
+        <div>
+          <h1>DiffFold</h1>
+          <p>Keep noisy files out of your way.</p>
+        </div>
+      </header>
+
+      <label class="toggle-row" for="enabled">
+        <span><strong>Auto-collapse matching files</strong><small>On GitHub pull request diffs</small></span>
+        <input id="enabled" type="checkbox">
+      </label>
+
+      <label class="rules-label" for="patterns">File path patterns <span>one glob per line</span></label>
+      <textarea id="patterns" spellcheck="false" aria-describedby="hint"></textarea>
+      <p id="hint" class="hint">Use <code>*</code> to match any characters. Example: <code>*.spec.ts</code></p>
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <footer>
+        <span id="status" role="status">Saved automatically</span>
+        <button id="save" type="button">Save rules</button>
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
